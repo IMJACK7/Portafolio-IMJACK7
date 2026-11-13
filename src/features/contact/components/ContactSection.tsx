@@ -10,7 +10,7 @@ import {
 import { SiGithub } from "react-icons/si";
 
 // Configura aquí tu correo de contacto.
-const CONTACT_EMAIL = "";
+const CONTACT_EMAIL = "jhonnycastrillon027@gmail.com";
 
 export default function ContactSection() {
   const hasEmail = CONTACT_EMAIL.trim().length > 0;
@@ -173,7 +173,7 @@ export default function ContactSection() {
                         name:
                       </span>{" "}
                       <span className="text-gold">
-                        "IMJACK7"
+                        {'"IMJACK7"'}
                       </span>,
                     </p>
 
@@ -182,7 +182,7 @@ export default function ContactSection() {
                         focus:
                       </span>{" "}
                       <span className="text-gold">
-                        "Cybersecurity"
+                        {'"Cybersecurity"'}
                       </span>,
                     </p>
 
@@ -191,7 +191,7 @@ export default function ContactSection() {
                         contact:
                       </span>{" "}
                       <span className="text-gold">
-                        "Let's connect"
+                        {'"Let&apos;s connect"'}
                       </span>
                     </p>
                   </div>
@@ -204,7 +204,7 @@ export default function ContactSection() {
                 {/* Terminal message */}
                 <div className="rounded-xl border border-white/10 bg-background/70 p-5">
                   <p className="mb-3 text-xs text-muted">
-                    // New connection
+                    {'// New connection'}
                   </p>
 
                   <p className="leading-7 text-foreground">
@@ -221,7 +221,7 @@ export default function ContactSection() {
               <div className="mt-8 border-t border-white/10 pt-7">
                 {hasEmail ? (
                   <a
-                    href={`mailto:${jhonnycastrillon027@gmail.com}`}
+                    href={`mailto:${CONTACT_EMAIL}`}
                     className="inline-flex w-full items-center justify-center gap-3 rounded-lg bg-gold px-6 py-3.5 font-semibold text-[#08090D] transition-all hover:bg-[#F0CB79] hover:shadow-[0_0_25px_rgba(214,168,75,0.2)]"
                   >
                     <Mail size={19} />
