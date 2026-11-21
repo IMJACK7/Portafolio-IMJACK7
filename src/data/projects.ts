@@ -22,15 +22,43 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  {
-    id: "bioverde",
-    name: "BioVerde",
-    summary:
-      "Dashboard de indicadores financieros para un proyecto de economía circular, desarrollado con Next.js y TypeScript.",
-    technologies: ["Next.js", "TypeScript", "React"],
-    status: "En desarrollo",
-    kind: "Académico",
-  },
+  
+{
+  id: "bioverde",
+  name: "BioVerde",
+  summary:
+    "Plataforma de comercio electrónico full stack para jardinería. " +
+    "Incluye catálogo con variantes, configurador de kits de cultivo, " +
+    "carrito de compras y panel administrativo para gestionar " +
+    "productos, pedidos e inventarios.",
+
+  problem:
+    "Centralizar la comercialización de productos de jardinería " +
+    "y la configuración de kits personalizados, manteniendo " +
+    "un control estructurado de productos y existencias.",
+
+  contribution:
+    "Desarrollo con Next.js, APIs y Prisma; modelado de datos " +
+    "relacionales en PostgreSQL y migración del catálogo a " +
+    "Neon, conservando identificadores y relaciones.",
+
+  technologies: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "PostgreSQL",
+    "Prisma",
+    "Neon",
+    "Auth.js",
+    "Tailwind CSS",
+  ],
+
+  status: "En desarrollo",
+  kind: "Académico",
+
+  repoUrl: "https://github.com/IMJACK7/Bioverde",
+}
+,
   {
     id: "sitio-libro",
     name: "Sitio web del libro",
