@@ -16,63 +16,80 @@ export interface Project {
   technologies: string[];
   status: ProjectStatus;
   kind: ProjectKind;
+  featured?: boolean;
   repoUrl?: string;
   demoUrl?: string;
   image?: string;
 }
 
 export const projects: Project[] = [
-  
-{
-  id: "bioverde",
-  name: "BioVerde",
-  summary:
-    "Plataforma de comercio electrónico full stack para jardinería. " +
-    "Incluye catálogo con variantes, configurador de kits de cultivo, " +
-    "carrito de compras y panel administrativo para gestionar " +
-    "productos, pedidos e inventarios.",
+  {
+    id: "bioverde",
+    name: "BioVerde",
+    summary:
+      "Plataforma de comercio electrónico full stack para " +
+      "productos de jardinería. Integra catálogo con variantes, " +
+      "configurador de kits de cultivo, carrito de compras y " +
+      "panel administrativo para gestionar pedidos e inventarios.",
 
-  problem:
-    "Centralizar la comercialización de productos de jardinería " +
-    "y la configuración de kits personalizados, manteniendo " +
-    "un control estructurado de productos y existencias.",
+    problem:
+      "Centralizar la comercialización de productos de " +
+      "jardinería y la configuración de kits personalizados, " +
+      "manteniendo un control estructurado de existencias.",
 
-  contribution:
-    "Desarrollo con Next.js, APIs y Prisma; modelado de datos " +
-    "relacionales en PostgreSQL y migración del catálogo a " +
-    "Neon, conservando identificadores y relaciones.",
+    contribution:
+      "Desarrollo de la aplicación con Next.js, APIs y Prisma. " +
+      "Modelado relacional en PostgreSQL y migración del " +
+      "catálogo comercial a Neon, conservando las relaciones " +
+      "y los identificadores originales.",
 
-  technologies: [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "PostgreSQL",
-    "Prisma",
-    "Neon",
-    "Auth.js",
-    "Tailwind CSS",
-  ],
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Neon",
+      "Auth.js",
+      "Tailwind CSS",
+    ],
 
-  status: "En desarrollo",
-  kind: "Académico",
+    status: "En desarrollo",
+    kind: "Académico",
+    featured: true,
 
-  repoUrl: "https://github.com/IMJACK7/Bioverde",
-}
-,
+    repoUrl: "https://github.com/IMJACK7/Bioverde",
+
+    // Agregar cuando exista una captura real:
+    // image: "/images/projects/bioverde.webp",
+
+    // Agregar únicamente cuando esté desplegado:
+    // demoUrl: "https://...",
+  },
+
   {
     id: "sitio-libro",
     name: "Sitio web del libro",
+
     summary:
-      "Sitio web personal con una propuesta visual temática y diseño adaptable a diferentes dispositivos.",
+      "Sitio web personal con una propuesta visual temática " +
+      "y diseño adaptable a diferentes dispositivos.",
+
     technologies: ["Next.js"],
+
     status: "Desplegado",
     kind: "Personal",
   },
+
   {
     id: "medicare-ips-aws",
     name: "Arquitectura cloud para MediCare IPS",
+
     summary:
-      "Diseño académico de infraestructura AWS con segmentación de red, control de acceso, observabilidad y respaldo.",
+      "Diseño académico de infraestructura en AWS, " +
+      "con segmentación de red, controles de acceso, " +
+      "observabilidad y estrategias de respaldo.",
+
     technologies: [
       "AWS",
       "VPC",
@@ -81,6 +98,7 @@ export const projects: Project[] = [
       "RDS",
       "CloudTrail",
     ],
+
     status: "Diseño académico",
     kind: "Académico",
   },
