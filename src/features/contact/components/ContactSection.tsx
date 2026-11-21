@@ -10,7 +10,26 @@ import {
 import { SiGithub } from "react-icons/si";
 
 // Configura aquí tu correo de contacto.
+
 const CONTACT_EMAIL = "jhonnycastrillon027@gmail.com";
+
+const EMAIL_SUBJECT = "Contacto desde el portafolio IMJACK7";
+
+const EMAIL_BODY = `Hola,
+
+He visitado tu portafolio IMJACK7 y me gustaría ponerme en contacto contigo.
+
+Mi nombre es:
+Motivo del contacto:
+
+Saludos.`;
+
+const GMAIL_URL =
+  "https://mail.google.com/mail/?view=cm&fs=1" +
+  `&to=${encodeURIComponent(CONTACT_EMAIL)}` +
+  `&su=${encodeURIComponent(EMAIL_SUBJECT)}` +
+  `&body=${encodeURIComponent(EMAIL_BODY)}`;
+
 
 export default function ContactSection() {
   const hasEmail = CONTACT_EMAIL.trim().length > 0;
@@ -220,14 +239,21 @@ export default function ContactSection() {
               {/* Contact action */}
               <div className="mt-8 border-t border-white/10 pt-7">
                 {hasEmail ? (
-                  <a
-                    href={`mailto:${CONTACT_EMAIL}`}
-                    className="inline-flex w-full items-center justify-center gap-3 rounded-lg bg-gold px-6 py-3.5 font-semibold text-[#08090D] transition-all hover:bg-[#F0CB79] hover:shadow-[0_0_25px_rgba(214,168,75,0.2)]"
-                  >
-                    <Mail size={19} />
-                    Enviarme un correo
-                    <ArrowUpRight size={17} />
-                  </a>
+                  
+                      <a
+                        href={GMAIL_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Escribirme un correo mediante Gmail"
+                        className="inline-flex w-full items-center justify-center gap-3 rounded-lg bg-gold px-6 py-3.5 font-semibold text-[#08090D] transition-all hover:bg-[#F0CB79] hover:shadow-[0_0_25px_rgba(214,168,75,0.2)]"
+                      >
+                        <Mail size={19} />
+
+                        Escribirme por Gmail
+
+                        <ArrowUpRight size={17} />
+                      </a>
+
                 ) : (
                   <div className="rounded-lg border border-white/10 bg-white/[0.03] px-5 py-4 text-center text-sm text-muted">
                     Configura tu correo para habilitar
