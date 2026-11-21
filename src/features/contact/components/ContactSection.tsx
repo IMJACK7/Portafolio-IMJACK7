@@ -11,6 +11,7 @@ import { SiGithub } from "react-icons/si";
 
 // Configura aquí tu correo de contacto.
 
+
 const CONTACT_EMAIL = "jhonnycastrillon027@gmail.com";
 
 const EMAIL_SUBJECT = "Contacto desde el portafolio IMJACK7";
@@ -24,11 +25,21 @@ Motivo del contacto:
 
 Saludos.`;
 
-const GMAIL_URL =
-  "https://mail.google.com/mail/?view=cm&fs=1" +
-  `&to=${encodeURIComponent(CONTACT_EMAIL)}` +
-  `&su=${encodeURIComponent(EMAIL_SUBJECT)}` +
+const GMAIL_URL = new URL(
+  "https://mail.google.com/mail/"
+);
+
+GMAIL_URL.searchParams.set("view", "cm");
+GMAIL_URL.searchParams.set("fs", "1");
+GMAIL_URL.searchParams.set("to", CONTACT_EMAIL);
+GMAIL_URL.searchParams.set("su", EMAIL_SUBJECT);
+GMAIL_URL.searchParams.set("body", EMAIL_BODY);
+
+const MAILTO_URL =
+  `mailto:${CONTACT_EMAIL}` +
+  `?subject=${encodeURIComponent(EMAIL_SUBJECT)}` +
   `&body=${encodeURIComponent(EMAIL_BODY)}`;
+
 
 
 export default function ContactSection() {
@@ -238,28 +249,37 @@ export default function ContactSection() {
 
               {/* Contact action */}
               <div className="mt-8 border-t border-white/10 pt-7">
-                {hasEmail ? (
-                  
-                      <a
-                        href={GMAIL_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Escribirme un correo mediante Gmail"
-                        className="inline-flex w-full items-center justify-center gap-3 rounded-lg bg-gold px-6 py-3.5 font-semibold text-[#08090D] transition-all hover:bg-[#F0CB79] hover:shadow-[0_0_25px_rgba(214,168,75,0.2)]"
-                      >
-                        <Mail size={19} />
+                
+{hasEmail ? (
+  <div className="space-y-4">
+    {/* Gmail en el navegador */}
+    <a
+      href={GMAIL_URL.toString()}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex w-full items-center justify-center gap-3 rounded-lg bg-gold px-6 py-3.5 font-semibold text-[#08090D] transition-all hover:bg-[#F0CB79] hover:shadow-[0_0_25px_rgba(214,168,75,0.2)]"
+    >
+      <Mail size={19} />
+      Escribirme por Gmail
+      <ArrowUpRight size={17} />
+    </a>
 
-                        Escribirme por Gmail
+    {/* Aplicación de correo del dispositivo */}
+    <a
+      href={MAILTO_URL}
+      className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-5 py-3 text-sm text-muted transition-colors hover:border-gold/30 hover:text-gold"
+    >
+      Abrir mi aplicación de correo
+      <ArrowUpRight size={15} />
+    </a>
+  </div>
+) : (
+  <div className="rounded-lg border border-white/10 bg-white/[0.03] px-5 py-4 text-center text-sm text-muted">
+    Configura tu correo para habilitar
+    el contacto directo.
+  </div>
+)}
 
-                        <ArrowUpRight size={17} />
-                      </a>
-
-                ) : (
-                  <div className="rounded-lg border border-white/10 bg-white/[0.03] px-5 py-4 text-center text-sm text-muted">
-                    Configura tu correo para habilitar
-                    el contacto directo.
-                  </div>
-                )}
 
                 <p className="mt-4 text-center font-mono text-xs text-muted">
                   IMJACK7 / LET&apos;S CONNECT
